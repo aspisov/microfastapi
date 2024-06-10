@@ -1,4 +1,3 @@
-# include .env
 AUTH_SERVER=auth_service
 ORDER_SERVER=order_service
 

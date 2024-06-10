@@ -9,8 +9,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - SQLALCHEMY_DATABASE_URL=sqlite:///./test.db
-      - SECRET_KEY=your_secret_key
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./auth_db.db
     volumes:
       - ./auth_service/app:/app
 
@@ -22,8 +21,7 @@ services:
     ports:
       - "8001:8000"
     environment:
-      - SQLALCHEMY_DATABASE_URL=sqlite:///./test.db
-      - SECRET_KEY=your_secret_key
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./order_db.db
     volumes:
       - ./order_service/app:/app
     depends_on:
