@@ -5,11 +5,13 @@ from pydantic import BaseModel
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-SECRET_KEY = "your_secret_key"
+SECRET_KEY = "99bcdb920b24601e38080b811549f368b5f31117718c73d6c05e1d34a5b19629"
 ALGORITHM = "HS256"
+
 
 class TokenData(BaseModel):
     email: str = None
+
 
 def decode_access_token(token: str):
     try:

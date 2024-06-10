@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "b292e896-8a23-41eb-8a5e-77d710552029",
+		"name": "microfastapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36190878"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "http://localhost:8000/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nickname\": \"raspri\",\n    \"email\": \"aspisovv@gmail.com\",\n    \"password\": \"Password123#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/register"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTcxNzkyMDQ4NywiZXhwIjoxNzE3OTU2NDg3fQ.10XVmeuYQYtQAC3Vaq_GeyfPLFHejHtvK2VJHyeJCXw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "aspisovv@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password123#",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/token"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/users/me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@gmail.com\",\n    \"password\": \"Dimaraspri!12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/users/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "http://localhost:8001/orders/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"from_station_id\": 1,\n    \"to_station_id\": 3,\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/orders/"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8001/orders/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8001/orders/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
