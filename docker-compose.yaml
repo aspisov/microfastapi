@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  auth_service:
+    build:
+      context: ./auth_service
+      dockerfile: Dockerfile
+    container_name: auth_service
+    ports:
+      - "8000:8000"
+    environment:
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./test.db
+      - SECRET_KEY=your_secret_key
+    volumes:
+      - ./auth_service/app:/app
+
+  order_service:
+    build:
+      context: ./order_service
+      dockerfile: Dockerfile
+    container_name: order_service
+    ports:
+      - "8001:8000"
+    environment:
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./test.db
+      - SECRET_KEY=your_secret_key
+    volumes:
+      - ./order_service/app:/app
+    depends_on:
+      - auth_service
