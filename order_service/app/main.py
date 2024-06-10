@@ -1,6 +1,8 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, BackgroundTasks
 from sqlalchemy.orm import Session
 import crud, models, schemas, database, security
+import asyncio
+import random
 
 models.Base.metadata.create_all(bind=database.engine)
 
@@ -23,7 +25,15 @@ def read_order(order_id: int, token: str = Depends(security.oauth2_scheme), db: 
         raise HTTPException(status_code=404, detail="Order not found")
     return order
 
-@app.get("/validate-token/")
-def validate_token(token: str = Depends(security.oauth2_scheme)):
-    token_data = security.decode_access_token(token)
-    return {"token_data": token_data}
+async def process_orders():
+    while True:
+        await asyncio.sleep(10)  # wait for 10 seconds
+        db = next(database.get_db())
+        orders = crud.get_orders_with_status(db, status=1)  # status 1 is "check"
+        for order in orders:
+            new_status = random.choice([2, 3])  # randomly choose between "success" (2) and "rejection" (3)
+            crud.update_order_status(db, order, new_status)
+
+@app.on_event("startup")
+async def startup_event():
+    asyncio.create_task(process_orders())

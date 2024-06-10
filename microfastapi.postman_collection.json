@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nickname\": \"raspri\",\n    \"email\": \"aspisovv@gmail.com\",\n    \"password\": \"Password123#\"\n}",
+							"raw": "{\n    \"nickname\": \"raspri\",\n    \"email\": \"aspisov@gmail.com\",\n    \"password\": \"Password123#\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "aspisovv@gmail.com",
+									"value": "aspisov@gmail.com",
 									"type": "text"
 								},
 								{
@@ -66,7 +66,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhc3Bpc292QGdtYWlsLmNvbSIsImV4cCI6MTcxODA0MjE3M30.N_8OGSR7X2tK4LivHRB2rtJlwmhqUGX-c1FWYsoiGIo"
 							}
 						},
 						"method": "GET",
@@ -95,14 +95,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhc3Bpc292QGdtYWlsLmNvbSIsImV4cCI6MTcxODA0MjE3M30.N_8OGSR7X2tK4LivHRB2rtJlwmhqUGX-c1FWYsoiGIo"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": 1,\n    \"from_station_id\": 1,\n    \"to_station_id\": 3,\n    \"status\": 1\n}",
+							"raw": "{\n    \"user_id\": 1,\n    \"from_station_id\": 1,\n    \"to_station_id\": 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -119,12 +119,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTcxODAzNzYxN30.uq3UiPuwPVuF7oy0wsE0cocUpQiC65aUj4QklnGVq8A"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhc3Bpc292QGdtYWlsLmNvbSIsImV4cCI6MTcxODA0MTgzN30.hYHJ9C8glotMcxkRfb7V1Zv_ZkS0fxXE4MUsQAc2DIw"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8001/orders/1"
+						"url": "http://localhost:8001/orders/11"
 					},
 					"response": []
 				}
